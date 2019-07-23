@@ -10,7 +10,7 @@
     <script>
         var filter="win16|win32|win64|mac";
         if(navigator.platform){
-            if(0>filter.includes(navigator.platform.toLocaleLowerCase())){
+            if(0>filter.indexOf(navigator.platform.toLocaleLowerCase())){
                 alert('모바일입니다.');
                 location.href="mobile.html";
             }else{
