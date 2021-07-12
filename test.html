@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style> 
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'noto sans kr', sans-serif;
+        }
+
+        .wrap{
+            position: relative;
+            width: 100%;
+            height: 850px;
+            background: #1f2c3f;
+        }
+
+        .inner{
+            margin: 0 auto;
+            padding: 120px 0 20px 0;
+            width: 1200px;
+        }
+
+        .inner h2, .inner h3{
+            color: #fff;
+            text-align: center;
+        }
+
+        .inner h2{
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        .inner h3{
+            margin-top: 28px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .inner h4{
+            margin-top: 80px;
+            text-align: center;
+            color: #15b5ff;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .graph{
+            width: 0;
+            transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
+            overflow: hidden;
+            margin-left: 358px;
+            /* margin: 0 auto; */
+        }
+
+        .chart{
+            position: relative;
+            width: 1200px;
+            height: 320px;
+            margin-top: 50px;
+            background: linear-gradient(rgba(255,255,255,0), #1c2e50);
+        }
+
+        .background span{
+            display: block;
+            width: 100%;
+            border-top: 1px dotted rgba(255,255,255,0.5);
+            height: 80px;
+            box-sizing: border-box;
+        }
+
+        .background span:last-child{
+            border-bottom: 2px solid white;
+        }
+
+        .white-bar{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 0px;
+            background: #fff;
+        }
+
+        .white-bar:first-child{
+            left: 420px;
+        }
+
+        .white-bar:last-child{
+            left: 700px;
+        }
+
+        .p_legend p{
+            opacity: 0;
+            position: absolute;
+            color: #999999;
+            left: 340px;
+            width: 20px;
+            text-align: right;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .p_legend p:nth-child(1){
+            bottom: 405px;
+        }
+
+        .p_legend p:nth-child(2){
+            bottom: 245px;
+        }
+
+        .p_legend p:nth-child(3){
+            bottom: 85px;
+        }
+
+
+        .p_bottom{
+            opacity: 0;
+            color: #fff;
+            width: 430px;
+            height: 20px;
+            margin: 30px auto 0 auto;
+            font-size: 18px;
+        }
+
+        .p_bottom p:first-child{
+            float: left;
+        }
+
+        .p_bottom p:last-child{
+            margin-right: 42px;
+            float: right;
+        }
+
+        .arrow-inner{
+            position: absolute;
+            overflow: hidden;
+            bottom: 160px;
+            left: 680px;
+            height: 0px;
+            width: 120px;
+        }
+        .arrow-body{
+            margin-left: 20px;
+            width: 80px;
+            height: 110px;
+            background: #0048ff;
+        }
+
+        .arrow-head{
+            border-style: solid;
+            border-width: 0 57px 50px 57px;
+            border-color: rgba(255,255,255,0) rgba(255,255,255,0) #0048ff rgba(255,255,255,0);        }
+
+        .p_content{
+            opacity: 0;
+            position: absolute;
+            right: 130px;
+            top: 50px;
+        }
+
+        .p_content h3{
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .p_content h4{
+            line-height: 65px;
+            color: #fff;
+            font-size: 60px;
+        }
+    </style>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript">
+
+
+
+        $(document).ready(function(){
+            $(".graph").delay(1000).css("width","1200px");
+
+            $(".p_legend p").delay(300).animate({
+                left: '320px',
+                opacity: '1'
+
+            },500);
+
+            $(".p_bottom").delay(800).animate({
+                opacity: '1',
+                marginTop: '10px'
+
+            },500);
+
+            $(".white-bar").delay(1200).animate({
+                height: '160px'
+            },600,"swing");
+
+            $(".arrow-inner").delay(1575).animate({
+                height: '160px'
+            },700,"swing");
+
+            $(".p_content").delay(2000).animate({
+                opacity: '1',
+                right: '150px'
+            },650);
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <h2>MDL Acceleration Technology</h2>
+            <h3>MDL은 미디움만의 블록체인 가속 기술로 차원이 다른 고성능을 선사합니다.</h3>
+            <h4>Acceleration Performance</h4>
+        </div>
+        <div class="p_legend">
+            <p>100</p>
+            <p>50</p>
+            <p>0</p>
+        </div>
+        <div class="graph">
+            <div class="chart">
+                <div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                </div>
+                <div>
+                    <div class="arrow-inner">
+                        <div class="arrow-head"></div>
+                        <div class="arrow-body"></div>
+                    </div>
+                </div>
+                <div class="p_content">
+                    <img src="https://www.themedium.io/asset/_front/kr/common/images/content/mxp+mbpu_logo.png" alt="">
+                    <h3>성능향상</h3>
+                    <h4>30~50%</h4>
+                </div>
+                <div class="background">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="p_bottom">
+                    <p>Hyperledger Fabric</p>
+                    <p>MDL 3.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
